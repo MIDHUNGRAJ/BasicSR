@@ -64,7 +64,7 @@ target-version = "py39"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]
-ignore = ["E501", "W503", "W504"]
+ignore = ["E501"]
 
 [tool.ruff.format]
 quote-style = "single"
