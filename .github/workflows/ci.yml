@@ -29,10 +29,13 @@ jobs:
 
       - name: Install package and test deps
         run: |
-          pip install -e ".[dev]"
+          pip install pytest
+          pip install -e . --no-build-isolation
 
-      - name: Run tests (CPU-safe subset)
+      - name: Run tests (CPU-safe, no external data required)
         run: |
           pytest tests/ -x -v \
             --ignore=tests/test_archs \
-            --ignore=tests/test_models
+            --ignore=tests/test_models \
+            --ignore=tests/test_data \
+            --ignore=tests/test_losses

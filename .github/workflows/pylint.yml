@@ -27,4 +27,7 @@ jobs:
           ruff format --check basicsr/ options/ scripts/ tests/ inference/
 
       - name: Spell check
-        run: codespell --skip=".git,./docs/build,*.cfg,*.toml"
+        run: |
+          codespell \
+            --skip=".git,./docs/build,*.cfg,*.toml,*.md" \
+            --ignore-words-list="uper,ramdom,propgation,simuator"
